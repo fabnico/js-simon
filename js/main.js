@@ -1,13 +1,9 @@
-/*
-Ho scritto il funzionamento grezzo, so che in qualche
-modo è possibile utilizzare meglio javascript/jquery per evitare tutte queste ripetizioni. Ci lavoro.
-*/
-
+var WIN_COUNTER = 0
+var LEVEL = 5
 var randomNumList = [];
 var winNumList = [];
-var WIN_COUNTER = 0
 
-while(randomNumList.length < 5){
+while(randomNumList.length < LEVEL){
    var pcNumber = Math.floor(Math.random()* 100 + 1);
    if(!randomNumList.includes(pcNumber)){
       randomNumList.push(pcNumber);
@@ -17,37 +13,13 @@ while(randomNumList.length < 5){
 alert(randomNumList);
 
 setTimeout(function(){
-   var userNum1 = parseInt(prompt('Inserisci il primo numero'));;
-   var userNum2 = parseInt(prompt('Inserisci il secondo numero'));
-   var userNum3 = parseInt(prompt('Inserisci il terzo numero'));
-   var userNum4 = parseInt(prompt('Inserisci il quarto numero'));
-   var userNum5 = parseInt(prompt('Inserisci il quinto numero'));
-
-   console.log(randomNumList);
-
-   if(randomNumList.includes(userNum1)){
-      winNumList.push(userNum1);
+   for(var i = 0; i < LEVEL; i++){
+   var userNum = parseInt(prompt('Inserisci un numero presente nella lista'));
+   if(randomNumList.includes(userNum)){
+      winNumList.push(userNum);
       WIN_COUNTER++
    }
-   if(randomNumList.includes(userNum2)){
-      winNumList.push(userNum2);
-      WIN_COUNTER++
-   }
-   if(randomNumList.includes(userNum3)){
-      winNumList.push(userNum3);
-      WIN_COUNTER++
-   }
-   if(randomNumList.includes(userNum4)){
-      winNumList.push(userNum4);
-      WIN_COUNTER++
-   }
-   if(randomNumList.includes(userNum5)){
-      winNumList.push(userNum5);
-      WIN_COUNTER++
-   }
-   console.log(WIN_COUNTER)
-   console.log(winNumList)
-
+}
    $('h1').text('Hai indovinato questi numeri: ' + winNumList)
    $('h2').text('Il tuo punteggio è: '+ WIN_COUNTER)
-},1000);
+},30000);
