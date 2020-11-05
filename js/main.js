@@ -4,7 +4,6 @@ modo è possibile utilizzare meglio javascript/jquery per evitare tutte queste r
 */
 
 var randomNumList = [];
-var userNumList = [];
 var winNumList = [];
 var WIN_COUNTER = 0
 
@@ -19,18 +18,12 @@ alert(randomNumList);
 
 setTimeout(function(){
    var userNum1 = parseInt(prompt('Inserisci il primo numero'));;
-   userNumList.push(userNum1);
    var userNum2 = parseInt(prompt('Inserisci il secondo numero'));
-   userNumList.push(userNum2);
    var userNum3 = parseInt(prompt('Inserisci il terzo numero'));
-   userNumList.push(userNum3);
    var userNum4 = parseInt(prompt('Inserisci il quarto numero'));
-   userNumList.push(userNum4);
    var userNum5 = parseInt(prompt('Inserisci il quinto numero'));
-   userNumList.push(userNum5);
 
    console.log(randomNumList);
-   console.log(userNumList);
 
    if(randomNumList.includes(userNum1)){
       winNumList.push(userNum1);
